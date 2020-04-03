@@ -7,6 +7,9 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import lSystemsException.LSystemSymbolException;
+import lSystemsException.LSystemLengthException;
+
 public class LLineTest {
 
 	@Test
@@ -69,7 +72,7 @@ public class LLineTest {
 	public void testLSystemLengthException() {
 		char[] test = {'A'};
 		Set<LRule> rules = new HashSet<LRule>();
-		rules.add(new A_X());
+		rules.add(new A__X());
 		LLine line = new LLine(test, rules);
 		boolean caughtClean = false;
 		try {

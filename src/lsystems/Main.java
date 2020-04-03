@@ -3,6 +3,9 @@ package lsystems;
 import java.util.HashSet;
 import java.util.Set;
 
+import lSystemsException.LSystemSymbolException;
+import lSystemsException.LSystemLengthException; 
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -19,13 +22,13 @@ public class Main {
 		char[] lineChar = {'A'};
 		LLine line = new LLine(lineChar, rules);
 
-		System.out.println("Step 0:" + line);
+		System.out.println("Sequence 0:" + line);
 		try {
 			for (int i = 1; i <= 10; i++) {
 
 				line.process();
 
-				System.out.println("Step " + i + ":" + line);
+				System.out.println("Sequence " + i + ":" + line);
 			}
 		} catch (LSystemSymbolException e) {
 			System.err.println("Not able to process LSystem line due to " + e.getSymbol());
